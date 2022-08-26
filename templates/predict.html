@@ -8,10 +8,14 @@
             <p class="title-keterangan">Hasil Prediksi</p>
 
             {%if prediction == 1%}
-            <p class="patient-non-risk">Besok Diprediksi <b class="non-risk">TURUN HUJAN</b></p>
+            <p class="patient-non-risk">Kondisi Pinjaman : <b class="non-risk">Non-Default</b></p>
+            <p class="patient-border-means">Pinjaman Anda dalam kondisi 'AMAN', 
+                Anda tidak perlu memeriksa kondisi pinjaman Anda dalam waktu dekat </p>
 
             {%elif prediction == 0%}
-            <p class="patient-have-risk">Besok Diprediksi <b class="have-risk">TIDAK AKAN TURUN HUJAN</b></p>
+            <p class="patient-have-risk">Kondisi Pinjaman : <b class="have-risk">Default</b></p>
+            <p class="patient-border-means">Pinjaman Anda dalam kondisi 'TIDAK AMAN', 
+                Disarankan untuk memeriksa kondisi pinjaman dikantor terdekat </p>
 
             {%else%}
             <p class="patient-have-risk">Prediksi tidak valid</p>

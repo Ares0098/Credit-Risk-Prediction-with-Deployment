@@ -18,7 +18,7 @@
     <div class="container" id="home">
       <div class="col-12 text-center">
         <div class="tm-page-header">
-          <h1 class="d-inline-block text-uppercase">Prediksi Curah Hujan di Australia</h1>
+          <h1 class="d-inline-block text-uppercase">KONDISI PINJAMAN NASABAH</h1>
         </div>
       </div>
     </div>
@@ -57,9 +57,9 @@
         <div class="row">
           <div class="col-12">
             <header>
-              <h2 class="tm-banner-title">PYTN_KampusMerdeka_05_Kelompok3_FinalProject2</h2>
+              <h2 class="tm-banner-title">Proyek Akhir - Virtual Based Experience</h2>
               <p class="mx-auto tm-banner-subtitle">
-                <b>Melakukan Prediksi apakah besok akan terjadi hujan atau tidak, berdasarkan kondisi cuaca hari ini</b>
+                <b>Prediksi Kondisi Pinjaman Nasabah</b>
               </p>
             </header>
           </div>
@@ -85,109 +85,85 @@
     <div class="login">
       <form id="contact" action="{{ url_for('predict') }}" method="POST">
         <fieldset>
-          <input type="text" name="mintemp" placeholder="Masukan nilai Minimum Temperature" tabindex="1" required autofocus />
+          <input type="text" name="int_rate" placeholder="Masukan jumlah Suku Bunga pinjaman (int_rate)" tabindex="1" required autofocus />
       </fieldset>
 
       <fieldset>
-          <input type="text" name="rainfall" placeholder="Masukan nilai Curah Hujan (in mm)" tabindex="2" required >
+          <input type="text" name="total_rec_prncp" placeholder="Nominal Hutang peminjam (total_rec_prncp)" tabindex="2" required >
       </fieldset>
 
       <fieldset>
-          <input type="text" name="windgustdir" placeholder="Masukan nilai arah angin" tabindex="3" required >
+          <input type="text" name="total_pymnt_inv" placeholder="Pembayaran diterima 1/2 dari investor (total_pymnt_inv)" tabindex="3" required >
       </fieldset>
 
       <fieldset>
-          <input type="text" name="windgustspeed" placeholder="Masukan nilai kecepatan angin" tabindex="4" required>
+          <input type="text" name="total_pymnt" placeholder="Pembayaran diterima (total_pymnt)" tabindex="4" required>
       </fieldset>
       
       <fieldset>
-          <input type="text" name="windir9" placeholder="Masukan nilai arah angin pada jam 9 pagi" tabindex="4" required>
+          <input type="text" name="out_prncp" placeholder="Sisa pokok pinjaman (out_prncp)" tabindex="5" required>
       </fieldset>
 
       <fieldset>
-          <input type="text" name="windir3" placeholder="Masukan nilai arah angin pada jam 3 sore" tabindex="4" required>
+          <input type="text" name="out_prncp_inv" placeholder="Sisa pokok pinjaman 1/2 dari investor (out_prncp_inv)" tabindex="6" required>
       </fieldset>
 
       <fieldset>
-          <input type="text" name="windspeed9" placeholder="Masukan nilai kecepatan angin pada jam 9 pagi" tabindex="4" required>
+          <input type="text" name="last_pymnt_amnt" placeholder="Jumlah total pembayaran terakhir (last_pymnt_amnt)" tabindex="7" required>
       </fieldset>
 
-      <fieldset>
-          <input type="text" name="windspeed3" placeholder="Masukan nilai kecepatanangin pada jam 3 sore" tabindex="4" required>
-      </fieldset>
-
-      <fieldset>
-          <input type="text" name="humidity9" placeholder="Ketikkan Humidity percentation at 9 AM" tabindex="5" required>
-      </fieldset>
-
-      <fieldset>
-          <input type="text" name="humidity3" placeholder="Ketikkan Humidity percentation at 3 PM" tabindex="6" required>
-      </fieldset>
       <div style="text-align:center">
       <fieldset>
-        <select name="raintoday" required>
-          <option value="" disabled selected>Apakah hari ini hujan?</option>
-            <option value="0">No</option>
-            <option value="1">Yes</option>
+        <select name="grade" required>
+          <option value="" disabled selected>LC Kelas Pinjaman (Grade)</option>
+            <option value="0">A</option>
+            <option value="1">B</option>
+            <option value="2">C</option>
+            <option value="3">D</option>
+            <option value="4">E</option>
+            <option value="5">F</option>
+            <option value="6">G</option>
         </select>
       </fieldset>
       
       <fieldset>
-        <select name="location" required>
-          <option value="" disabled selected>Silahkan pilih lokasi</option>
-          <option value="0">Adelaide</option>
-          <option value="1">Albury</option>
-          <option value="2">AliceSprings</option>
-          <option value="3">Badgerys Creek</option>
-          <option value="4">Ballarat</option>
-          <option value="5">Bendigo</option>
-          <option value="6">Brisbane</option>
-          <option value="7">Cairns</option>
-          <option value="8">Canberra</option>
-          <option value="9">Cobar</option>
-          <option value="10">Coffs Harbour</option>
-          <option value="11">Dartmoor</option>
-          <option value="12">Darwin</option>
-          <option value="13">Gold Coast</option>
-          <option value="14">Hobart</option>
-          <option value="15">Katherine</option>
-          <option value="16">Launceston</option>
-          <option value="17">Melbourne</option>
-          <option value="18">Melbourne Airport</option>
-          <option value="19">Mildura</option>
-          <option value="20">Moree</option>
-          <option value="21">Mount Gambier</option>
-          <option value="22">Mount Ginini</option>
-          <option value="23">Nhil</option>
-          <option value="24">Norah Head</option>
-          <option value="25">Norfolk Island</option>
-          <option value="26">Nuriootpa</option>
-          <option value="27">Pearce RAAF</option>
-          <option value="28">Perth</option>
-          <option value="29">Perth Airport</option>
-          <option value="30">Portland</option>
-          <option value="31">Richmond</option>
-          <option value="32">Sale</option>
-          <option value="33">Sydney</option>
-          <option value="34">Sydney Airport</option>
-          <option value="35">Townsville</option>
-          <option value="36">Tuggeranong</option>
-          <option value="37">Uluru</option>
-          <option value="38">Wagga Wagga</option>
-          <option value="39">Walpole</option>
-          <option value="40">Watsonia</option>
-          <option value="41">Williamtown</option>
-          <option value="42">Witchcliffe</option>
-          <option value="43">Wollongong</option>
-          <option value="44">Woomera</option>
-        </select>
-      </fieldset>
-
-      <fieldset>
-        <select name="metode" required>
-          <option value="" disabled selected>Metode Apa yang akan digunakan:</option>
-            <option value="1">Logistic Regression</option>
-            <option value="2">Support Vector Machine</option>
+        <select name="sub_grade" required>
+          <option value="" disabled selected>LC Sub-Kelas Pinjaman (Sub-Grade)</option>
+          <option value="0">A1</option>
+          <option value="1">A2</option>
+          <option value="2">A3</option>
+          <option value="3">A4</option>
+          <option value="4">A5</option>
+          <option value="5">B1</option>
+          <option value="6">B2</option>
+          <option value="7">B3</option>
+          <option value="8">B4</option>
+          <option value="9">B5</option>
+          <option value="10">C1</option>
+          <option value="11">C2</option>
+          <option value="12">C3</option>
+          <option value="13">C4</option>
+          <option value="14">C5</option>
+          <option value="15">D1</option>
+          <option value="16">D2</option>
+          <option value="17">D3</option>
+          <option value="18">D4</option>
+          <option value="19">D5</option>
+          <option value="20">E1</option>
+          <option value="21">E2</option>
+          <option value="22">E3</option>
+          <option value="23">E4</option>
+          <option value="24">E5</option>
+          <option value="25">F1</option>
+          <option value="26">F2</option>
+          <option value="27">F3</option>
+          <option value="28">F4</option>
+          <option value="29">F5</option>
+          <option value="30">G1</option>
+          <option value="31">G2</option>
+          <option value="32">G3</option>
+          <option value="33">G4</option>
+          <option value="34">G5</option>
         </select>
       </fieldset>
 
@@ -202,9 +178,8 @@
     <footer class="container tm-footer">
       <div class="row tm-footer-row">
         <p class="col-md-10 col-sm-12 mb-0">
-          1. Aditya Gumilar - PYTN-KS05-002<br>
-          2. Muhammad Rezky Hamesi Akhyar - PYTN-KS05-007<br>
-          3. Muhammad Rizaldi - PYTN-KS05-009<br>
+          By : <br>
+          Muhammad Rezky Hamesi Akhyar<br>
         </p>
       </div>
     </footer>
